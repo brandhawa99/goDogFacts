@@ -23,19 +23,20 @@ func getFactOrExit() {
 
 	for {
 
+		// print menu
 		fmt.Println("type 'exit' to exit program")
-		fmt.Println("Else press enter to continue...")
+		fmt.Println("press enter to continue...")
 
-		text, _ := reader.ReadString('\n')
+		// get user input
+		userInput, _ := reader.ReadString('\n')
 
 		//when reading string from STDIN it contains a \n at the end so need to account for that
-		if text == "exit\n" {
+		if userInput == "exit\n" {
 			fmt.Println("Exiting...")
 			fmt.Println("Thank you for trying this cmd app")
-			break
 		} else {
-			coloured := fmt.Sprintf("\x1b[%dm%s\x1b[0m", 93, "fact: "+getDogFact())
-			fmt.Println(coloured + "\n")
+			coloured_output := fmt.Sprintf("\x1b[%dm%s\x1b[0m", 93, "fact: "+getDogFact())
+			fmt.Println(coloured_output + "\n")
 			//give user time to read fact before asking for new fact or exit
 			time.Sleep(2 * time.Second)
 		}
