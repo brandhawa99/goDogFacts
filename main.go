@@ -34,7 +34,8 @@ func getFactOrExit() {
 			fmt.Println("Thank you for trying this cmd app")
 			break
 		} else {
-			fmt.Println("Fact: " + getDogFact() + "\n")
+			coloured := fmt.Sprintf("\x1b[%dm%s\x1b[0m", 93, "fact: "+getDogFact())
+			fmt.Println(coloured + "\n")
 			//give user time to read fact before asking for new fact or exit
 			time.Sleep(2 * time.Second)
 		}
